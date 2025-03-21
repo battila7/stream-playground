@@ -17,7 +17,7 @@ public class Application {
         withoutStreams(countries);
         nestedStaticClass(countries);
         anonymousClass(countries);
-        lambdaWithTypeAnnotations(countries);
+        lambdaWithTypeAnnotationsAndBlockBody(countries);
         lambda(countries);
         methodReference(countries);
         mapAndMethodReference(countries);
@@ -63,9 +63,11 @@ public class Application {
         System.out.println(result.size());
     }
 
-    private static void lambdaWithTypeAnnotations(final List<Country> countries) {
+    private static void lambdaWithTypeAnnotationsAndBlockBody(final List<Country> countries) {
         final var result = countries.stream()
-                .filter((Country country) -> country.name().length() > 10)
+                .filter((Country country) -> {
+                    return country.name().length() > 10
+                })
                 .toList();
 
         System.out.println(result.size());
