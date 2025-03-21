@@ -66,7 +66,7 @@ public class Application {
     private static void lambdaWithTypeAnnotationsAndBlockBody(final List<Country> countries) {
         final var result = countries.stream()
                 .filter((Country country) -> {
-                    return country.name().length() > 10
+                    return country.name().length() > 10;
                 })
                 .toList();
 
